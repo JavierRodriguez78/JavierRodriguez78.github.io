@@ -5,7 +5,7 @@ description: "Regreso al blog después de más de 1 año sin publicar nada."
 date:        2021-12-09
 author:      "Xavi Rodríguez."
 image:       "img/blog.jpg"
-tags:        ["Blog", "reloaded"]
+tags:        ["Blog"]
 categories:  ["General" ]
 ---
 
