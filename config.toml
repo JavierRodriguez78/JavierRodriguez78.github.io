@@ -1,5 +1,5 @@
 baseURL = "https://javier-rodriguez.com"
-languageCode = "en-us"
+languageCode = "es"
 title = "Javier Rodríguez"
 theme = "hugo-theme-cleanwhite"
 publishDir = "docs"
@@ -29,29 +29,40 @@ home = ["HTML", "RSS"]
   disqus_site = ""
 
   #Enable wechat pay & alipay to allow readers send reward money if they like the articles 
-  reward = true 
+  reward = false
   # reward_guide = "如果这篇文章对你有用,请随意打赏" 
 
   friends = true
   bookmarks = false
   about_me = true
 
-[params.social]
-rss            = true 
-email          = "email@javier-rodriguez.com"
-#facebook      = "full profile url in facebook"
-#googleplus    = "full profile url in googleplus"
-twitter       = "https://twitter.com/jaroso78_11"
-linkedin       = "https://www.linkedin.com/in/javier-rodr%C3%ADguez-soler-ba466031"
-#stackoverflow  = "https://stackoverflow.com/users/yourstackoverflowid"
-#instagram     = "full profile url in instagram"
-github         = "https://github.com/JavierRodriguez78"
-#wechat         = "your wechat qr code image"
-#  medium         = "full profile url in medium"
-#pinterest     = "full profile url in pinterest"
-#reddit        = "full profile url in reddit"
-#gitlab        = "full profile url in gitlab"
-#mastodon      = "full profile url in mastodon"
-#keybase       = "full profile url in keybase"
-#xing          = "https://www.xing.com/profile/yourxingid"
-#git           = "full profile url for git user"
+    [params.social]
+        rss            = true 
+        email          = "email@javier-rodriguez.com"
+        #facebook      = "full profile url in facebook"
+        #googleplus    = "full profile url in googleplus"
+        twitter       = "https://twitter.com/jaroso78_11"
+        linkedin       = "https://www.linkedin.com/in/javier-rodr%C3%ADguez-soler-ba466031"
+        #stackoverflow  = "https://stackoverflow.com/users/yourstackoverflowid"
+        #instagram     = "full profile url in instagram"
+        github         = "https://github.com/JavierRodriguez78"
+        #wechat         = "your wechat qr code image"
+        #  medium         = "full profile url in medium"
+        #pinterest     = "full profile url in pinterest"
+        #reddit        = "full profile url in reddit"
+        #gitlab        = "full profile url in gitlab"
+        #mastodon      = "full profile url in mastodon"
+        #keybase       = "full profile url in keybase"
+        #xing          = "https://www.xing.com/profile/yourxingid"
+        #git           = "full profile url for git user"
+
+    [[params.addtional_menus]]
+        title =  "ABOUT"
+        href =  "/top/about/"
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 2
+    startLevel = 1
+  [markup.highlight]
+    style = "dracula"
