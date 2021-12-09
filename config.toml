@@ -8,11 +8,11 @@ publishDir = "docs"
 home = ["HTML", "RSS"]
 
 [params]
-  header_image = "img/home-bg-jeep.jpg"
+  header_image = "img/back.jpg"
 
 [params.social]
 rss            = true 
-email          = "email@javier-rodrigue.com"
+email          = "email@javier-rodriguez.com"
 #facebook      = "full profile url in facebook"
 #googleplus    = "full profile url in googleplus"
 twitter       = "https://twitter.com/jaroso78_11"
