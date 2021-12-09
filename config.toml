@@ -60,6 +60,9 @@ home = ["HTML", "RSS"]
     [[params.addtional_menus]]
         title =  "Sobre mí"
         href =  "/top/about/"
+    [[params.addtional_menus]]
+        title =  "ARCHIVO"
+        href =  "/top/archive/"
 
 [markup]
   [markup.tableOfContents]
