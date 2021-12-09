@@ -9,3 +9,23 @@ home = ["HTML", "RSS"]
 
 [params]
   header_image = "img/home-bg-jeep.jpg"
+
+[params.social]
+rss            = true 
+email          = "email@javier-rodrigue.com"
+#facebook      = "full profile url in facebook"
+#googleplus    = "full profile url in googleplus"
+twitter       = "https://twitter.com/jaroso78_11"
+linkedin       = "https://www.linkedin.com/in/javier-rodr%C3%ADguez-soler-ba466031"
+#stackoverflow  = "https://stackoverflow.com/users/yourstackoverflowid"
+#instagram     = "full profile url in instagram"
+github         = "https://github.com/JavierRodriguez78"
+#wechat         = "your wechat qr code image"
+#  medium         = "full profile url in medium"
+#pinterest     = "full profile url in pinterest"
+#reddit        = "full profile url in reddit"
+#gitlab        = "full profile url in gitlab"
+#mastodon      = "full profile url in mastodon"
+#keybase       = "full profile url in keybase"
+#xing          = "https://www.xing.com/profile/yourxingid"
+#git           = "full profile url for git user"
