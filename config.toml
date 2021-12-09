@@ -34,7 +34,7 @@ home = ["HTML", "RSS"]
 
   friends = true
   bookmarks = false
-  about_me = false
+  about_me = true
 
 [params.social]
 rss            = true 
