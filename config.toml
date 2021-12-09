@@ -58,7 +58,7 @@ home = ["HTML", "RSS"]
         #git           = "full profile url for git user"
 
     [[params.addtional_menus]]
-        title =  "ABOUT"
+        title =  "Sobre mí"
         href =  "/top/about/"
 
 [markup]
