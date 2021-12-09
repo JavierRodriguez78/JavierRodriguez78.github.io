@@ -1,6 +1,6 @@
 baseURL = "https://javierrodriguez78.github.io"
 languageCode = "en-us"
-title = "My pages"
+title = "Javier Rodríguez"
 theme = "hugo-theme-cleanwhite"
 publishDir = "docs"
 
