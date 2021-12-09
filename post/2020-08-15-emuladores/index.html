@@ -1,0 +1,256 @@
+<!doctype html><html lang=es>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta property="og:site_name" content="Javier Rodríguez">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://javier-rodriguez.com/img/back.jpg">
+<meta property="twitter:image" content="https://javier-rodriguez.com/img/back.jpg">
+<meta name=title content="Emuladores">
+<meta property="og:title" content="Emuladores">
+<meta property="twitter:title" content="Emuladores">
+<meta name=description content="Artículo sobre emuladores.">
+<meta property="og:description" content="Artículo sobre emuladores.">
+<meta property="twitter:description" content="Artículo sobre emuladores.">
+<meta property="twitter:card" content="summary">
+<meta name=keyword content="Xavi, Javi, Rodriguez, blog, Geekshubs, Academy, Microservices, microservicios, php, laravel, aws, java, spring cloud, ecs, eks, docker, terraform, ansible">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<title>Emuladores-Javier Rodríguez Blog</title>
+<link rel=canonical href=/post/2020-08-15-emuladores/>
+<link rel=stylesheet href=/css/iDisqus.min.css>
+<link rel=stylesheet href=/css/bootstrap.min.css>
+<link rel=stylesheet href=/css/hugo-theme-cleanwhite.min.css>
+<link rel=stylesheet href=/css/zanshang.css>
+<link href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css rel=stylesheet type=text/css>
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js></script>
+<script src=/js/hux-blog.min.js></script>
+</head>
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+<div class=container-fluid>
+<div class="navbar-header page-scroll">
+<button type=button class=navbar-toggle>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+<a class=navbar-brand href=/>Javier Rodríguez</a>
+</div>
+<div id=huxblog_navbar>
+<div class=navbar-collapse>
+<ul class="nav navbar-nav navbar-right">
+<li>
+<a href=/>Home</a>
+</li>
+<li>
+<a href=/categories/general>general</a>
+</li>
+<li>
+<a href=/categories/opini%C3%B3n>opinión</a>
+</li>
+<li>
+<a href=/categories/tech>tech</a>
+</li>
+<li><a href=/top/about/>Sobre mí</a></li>
+<li><a href=/top/archive/>ARCHIVO</a></li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+<script>var $body=document.body,$toggle=document.querySelector('.navbar-toggle'),$navbar=document.querySelector('#huxblog_navbar'),$collapse=document.querySelector('.navbar-collapse');$toggle.addEventListener('click',handleMagic);function handleMagic(a){$navbar.className.indexOf('in')>0?($navbar.className=" ",setTimeout(function(){$navbar.className.indexOf('in')<0&&($collapse.style.height="0px")},400)):($collapse.style.height="auto",$navbar.className+=" in")}</script>
+<style type=text/css>header.intro-header{background-image:url(/img/retro.jpg)}</style>
+<header class=intro-header>
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class=post-heading>
+<div class=tags>
+<a class=tag href=/tags/emuladores title=Emuladores>
+Emuladores
+</a>
+<a class=tag href=/tags/zx title=Zx>
+Zx
+</a>
+<a class=tag href=/tags/chip-8 title=chip-8>
+chip-8
+</a>
+<a class=tag href=/tags/cpc-464 title=cpc-464>
+cpc-464
+</a>
+</div>
+<h1>Emuladores</h1>
+<h2 class=subheading>Vamos a entender como funcionan los emuladores.</h2>
+<span class=meta>
+Posted by
+    "Xavi Rodríguez."
+on
+Saturday, August 15, 2020
+</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<article>
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2
+col-md-10 col-md-offset-1
+post-container">
+<p>Hace tiempo que quería meterme en el mundo de los emuladores y la verdad es que siempre me han llamado bastante la atención. Por la complejidad técnica que conlleva tanto conocer el sistema que quieres emular, como por el desarrollo en sí.</p>
+<p>Además ya que tengo cierta edad, siempre me cae alguna lagrimita al ver una fotografía del <a href=https://es.wikipedia.org/wiki/Amstrad_CPC_464>CPC 464 de Amstrad</a>.
+Con el que empecé mis pinitos con 12 años y me inició en el mundo de la programación ya que con este equipo le acompañaba un <a href=http://www.cpcmania.com/Docs/Manuals/Manual%20de%20Usuario%20Amstrad%20CPC%20464.pdf>libro</a> de <a href=https://es.wikipedia.org/wiki/BASIC>Basic</a>.
+Al final del libro siempre había juegos escritos para que lo portaras a tu equipo.</p>
+<p><strong>Antes de nada indicar que no soy especialista de ello</strong>, simplemente en éste post recojo información sobre emulación para poder entender los conceptos básicos, así que voy a ello.</p>
+<h2 id=qué-es-un-emulador>¿Qué es un emulador?</h2>
+<p>Si nos vamos a la definición de la Wikipedia:</p>
+<blockquote>
+<p>En <a href=https://es.wikipedia.org/wiki/Inform%C3%A1tica title=Informática>informática</a>, un <strong>emulador</strong> es un <em><a href=https://es.wikipedia.org/wiki/Software title=Software>software</a></em> que permite ejecutar <a href=https://es.wikipedia.org/wiki/Programa_inform%C3%A1tico>programas</a> o <a href=https://es.wikipedia.org/wiki/Videojuego title=Videojuego>videojuegos</a> en una plataforma (sea una arquitectura de <em><a href=https://es.wikipedia.org/wiki/Hardware title=Hardware>hardware</a></em> o un <a href=https://es.wikipedia.org/wiki/Sistema_operativo title="Sistema operativo">sistema operativo</a>) diferente de aquella para la cual fueron escritos originalmente. A diferencia de un <a href=https://es.wikipedia.org/wiki/Simulador title=Simulador>simulador</a>, que solo trata de reproducir el comportamiento del programa, un emulador trata de modelar de forma precisa el dispositivo de manera que este funcione como si estuviese siendo usado en el aparato original.</p>
+</blockquote>
+<p>Lo primero que hay que tener en cuenta que un <strong>Emulador</strong> no es un <strong>Simulador</strong> y por tanto debemos intentar programar el funcionamiento interno de la forma más fidedigna de aquello que queremos emular, comportamiento de la <strong>cpu</strong> llamadas a memoria, etc.</p>
+<h2 id=cómo-funciona-un-emulador>¿Cómo funciona un emulador?</h2>
+<p>Para entender como funciona un <strong>Emulador</strong> debemos saber que este se encargará de traducir las instrucciones para que un sistema para el que no fue pensado originalmente, pueda entender y ejecutar esa lista de instrucciones que son los programas o juegos a emular.</p>
+<p>Para ello <strong>Emularará</strong> el sistema original ejecutando las instrucciones <strong><a href=https://es.wikipedia.org/wiki/C%C3%B3digo_de_operaci%C3%B3n>opCodes</a></strong> de la <strong>cpu</strong></p>
+<h2 id=tipos-de-emulación>¿Tipos de emulación?</h2>
+<p>Podemos encontrarnos con diferentes clasificaciones de emuladores :</p>
+<ul>
+<li>Emulación a bajo nivel o <strong><a href=http://emulation.gametechwiki.com/index.php/High/Low_level_emulation>LLE</a></strong> se define cuando emulamos todos los componentes del sistema, cpu, memoría, etc.</li>
+<li>Emulación a alto nivel o <strong><a href=http://emulation.gametechwiki.com/index.php/High/Low_level_emulation>HLE</a></strong> se podría definir emulación de alto como una simulación, los volcados de BIOS y otros códigos específicos de la máquina sin entrar a emular al detalle todos los procesos del sistema.</li>
+</ul>
+<p>Entre las ventajas de la emulación <strong>HLE</strong>, principalmente está la capacidad de utilizar el hardware del host mucho mejor y más fácilmente, la capacidad de optimizar los resultados a medida que mejoran el código y el hardware.</p>
+<p>EL progreso de las implementaciones también es mucho más independiente de la documentación detallada del hardware, en lugar de depender solo de la lista de posibles funciones disponibles para el programador.</p>
+<p>Las desventajas incluyen una dependencia mucho mayor en la estandarización entre las aplicaciones de destino y la presencia de mecanismos suficientemente de alto nivel en las plataformas emuladas. Si no existe tal mecanismo, o si las aplicaciones no lo utilizan de una de las formas ya admitidas, no funcionarán correctamente.</p>
+<h2 id=por-donde-empezar>¿Por donde empezar?</h2>
+<p>En un principio quería lanzarme a lo grande y empezar por la emulación de un <strong><a href=https://es.wikipedia.org/wiki/Sinclair_ZX_Spectrum>Spectrum ZX</a></strong> para los viejos del lugar sabrán que fue un equipo que nos quito muchas horas de sueño, por los juegos y por los procesos de carga. XDDD</p>
+<p>Pero revisando la documentación, y sin tener idea sobre emulación, etc, decidir bajar a la tierra y empezar por algo más sencillo para posteriormente escalar. Y que además nos ayude a entender todo el proceso y el funcionamiento de la emulación.
+Así que he decidido empezar por el <strong><a href=https://es.wikipedia.org/wiki/CHIP-8>CHIP-8</a></strong> que contiene un juego de opCodes que me permitirá jugar y conocer todo el proceso de funcionamiento interno.</p>
+<h2 id=cómo-lo-voy-hacer>¿Cómo lo voy hacer?</h2>
+<p>Pues utilizando un lenguaje que cada vez me sorprende más <a href=https://golang.org/>Go</a>.
+Así que en un próximo post hablaremos más en detalle del <strong>CHIP-8</strong> y empezaremos a estructurar el proyecto.</p>
+<p>Hasta pronto.</p>
+<hr>
+<ul class=pager>
+<li class=previous>
+<a href=/post/2020-08-01-monitorizando-con-grafana-influx-telegraph/ data-toggle=tooltip data-placement=top title="Monitorizando nuestro servidores con Grafana, Influx Telegraph">&larr;
+Previous Post</a>
+</li>
+<li class=next>
+<a href=/post/2020-09-01-clipper/ data-toggle=tooltip data-placement=top title=Clipper>Next
+Post &rarr;</a>
+</li>
+</ul>
+<div id=disqus-comment></div>
+</div>
+<div class="col-lg-2 col-lg-offset-0
+visible-lg-block
+sidebar-container
+catalog-container">
+<div class=side-catalog>
+<hr class="hidden-sm hidden-xs">
+<h5>
+<a class=catalog-toggle href=#>CATALOG</a>
+</h5>
+<ul class=catalog-body></ul>
+</div>
+</div>
+<div class="col-lg-11 col-lg-offset-1
+col-md-10 col-md-offset-1
+sidebar-container">
+<section>
+<hr class="hidden-sm hidden-xs">
+<h5><a href=/tags/>FEATURED TAGS</a></h5>
+<div class=tags>
+<a href=/tags/code title=code>
+code
+</a>
+<a href=/tags/grafana title=grafana>
+grafana
+</a>
+<a href=/tags/influx title=influx>
+influx
+</a>
+<a href=/tags/nginx title=nginx>
+nginx
+</a>
+<a href=/tags/telegraph title=telegraph>
+telegraph
+</a>
+</div>
+</section>
+<section>
+<hr>
+<h5>FRIENDS</h5>
+<ul class=list-inline>
+</ul>
+</section>
+</div>
+</div>
+</div>
+</article>
+<footer>
+<div class=container>
+<div class=row>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<ul class="list-inline text-center">
+<li>
+<a href rel=alternate type=application/rss+xml title="Javier Rodríguez">
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=mailto:email@javier-rodriguez.com>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a href=https://twitter.com/jaroso78_11>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a target=_blank href=https://github.com/JavierRodriguez78>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-github fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+<li>
+<a target=_blank href=https://www.linkedin.com/in/javier-rodr%C3%ADguez-soler-ba466031>
+<span class="fa-stack fa-lg">
+<i class="fas fa-circle fa-stack-2x"></i>
+<i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+</li>
+</ul>
+<p class="copyright text-muted">
+Copyright &copy; Javier Rodríguez 2021
+<br>
+<a href=https://themes.gohugo.io/hugo-theme-cleanwhite>CleanWhite Hugo Theme</a> by <a href=https://zhaohuabing.com>Huabing</a> |
+<iframe style=margin-left:2px;margin-bottom:-5px frameborder=0 scrolling=0 width=100px height=20px src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true"></iframe>
+</p>
+</div>
+</div>
+</div>
+</footer>
+<script>function loadAsync(f,b){var c=document,d='script',a=c.createElement(d),e=c.getElementsByTagName(d)[0];a.src=f,b&&a.addEventListener('load',function(a){b(null,a)},!1),e.parentNode.insertBefore(a,e)}</script>
+<script>$('#tag_cloud').length!==0&&loadAsync("/js/jquery.tagcloud.js",function(){$.fn.tagcloud.defaults={color:{start:'#bbbbee',end:'#0085a1'}},$('#tag_cloud a').tagcloud()})</script>
+<script>loadAsync("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js",function(){var a=document.querySelector("nav");a&&FastClick.attach(a)})</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-159378701-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+<script type=text/javascript>function generateCatalog(a){_containerSelector='div.post-container';var h=$(_containerSelector),c,d,e,f,g,b;return c=h.find('h1,h2,h3,h4,h5,h6'),$(a).html(''),c.each(function(){d=$(this).prop('tagName').toLowerCase(),g="#"+$(this).prop('id'),e=$(this).text(),b=$('<a href="'+g+'" rel="nofollow">'+e+'</a>'),f=$('<li class="'+d+'_nav"></li>').append(b),$(a).append(f)}),!0}generateCatalog(".catalog-body"),$(".catalog-toggle").click(function(a){a.preventDefault(),$('.side-catalog').toggleClass("fold")}),loadAsync("/js/jquery.nav.js",function(){$('.catalog-body').onePageNav({currentClass:"active",changeHash:!1,easing:"swing",filter:"",scrollSpeed:700,scrollOffset:0,scrollThreshold:.2,begin:null,end:null,scrollChange:null,padding:80})})</script>
+</body>
+</html>
