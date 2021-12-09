@@ -1,11 +1,11 @@
 ---
 title:       "Php es Molón?"
 subtitle:    "Php no está muerto sigue evolucionando."
-description: "Regreso al blog después de más de 1 año sin publicar nada."
+description: "Sólo es mi opinión sobre php y su evolución."
 date:        2020-12-09
 author:      "Xavi Rodríguez."
 image:       "img/php.jpg"
-tags:        ["PHP","laravel", "Symfony"]
+tags:        ["Php","laravel", "Symfony", "Code"]
 categories:  ["Tech", "Opinión" ]
 ---
 Aquí va otro post de **opinión**, pero desde la perspectiva de la experiencia ya que he trabajado durante los últimos proyectos en PHP, en algunos casos con [Laravel](https://laravel.com/) y en otros con [Symfony.](https://symfony.com/)
