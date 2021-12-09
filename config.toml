@@ -3,6 +3,7 @@ languageCode = "es"
 title = "Javier Rodríguez"
 theme = "hugo-theme-cleanwhite"
 publishDir = "docs"
+googleAnalytics = "UA-159378701-1"
 
 [outputs]
 home = ["HTML", "RSS"]
