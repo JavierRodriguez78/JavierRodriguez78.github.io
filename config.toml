@@ -57,13 +57,13 @@ home = ["HTML", "RSS"]
         #xing          = "https://www.xing.com/profile/yourxingid"
         #git           = "full profile url for git user"
 
+   
+    [[params.addtional_menus]]
+        title =  "Archivo"
+        href =  "/top/archive/"
     [[params.addtional_menus]]
         title =  "Sobre mí"
         href =  "/top/about/"
-    [[params.addtional_menus]]
-        title =  "ARCHIVO"
-        href =  "/top/archive/"
-
 [markup]
   [markup.tableOfContents]
     endLevel = 2
