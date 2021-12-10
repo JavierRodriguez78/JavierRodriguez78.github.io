@@ -17,7 +17,7 @@
 <meta name=keyword content="Xavi, Javi, Rodriguez, blog, Geekshubs, Academy, Microservices, microservicios, php, laravel, aws, java, spring cloud, ecs, eks, docker, terraform, ansible">
 <link rel="shortcut icon" href=/img/favicon.ico>
 <title>RabbitMQ-Javier Rodríguez Blog</title>
-<link rel=canonical href=/post/2020-10-01-rabbitmq/>
+<link rel=canonical href=/post/2021-12-10-rabbitmq/>
 <link rel=stylesheet href=/css/iDisqus.min.css>
 <link rel=stylesheet href=/css/bootstrap.min.css>
 <link rel=stylesheet href=/css/hugo-theme-cleanwhite.min.css>
@@ -61,7 +61,7 @@
 </div>
 </nav>
 <script>var $body=document.body,$toggle=document.querySelector('.navbar-toggle'),$navbar=document.querySelector('#huxblog_navbar'),$collapse=document.querySelector('.navbar-collapse');$toggle.addEventListener('click',handleMagic);function handleMagic(a){$navbar.className.indexOf('in')>0?($navbar.className=" ",setTimeout(function(){$navbar.className.indexOf('in')<0&&($collapse.style.height="0px")},400)):($collapse.style.height="auto",$navbar.className+=" in")}</script>
-<style type=text/css>header.intro-header{background-image:url(/img/clipper.jpg)}</style>
+<style type=text/css>header.intro-header{background-image:url(/img/php.jpg)}</style>
 <header class=intro-header>
 <div class=container>
 <div class=row>
@@ -100,32 +100,6 @@ Friday, December 10, 2021
 <div class="col-lg-8 col-lg-offset-2
 col-md-10 col-md-offset-1
 post-container">
-<p>Este paquete lo desarrolle para un proyecto de un cliente que requería realizar diversas tareas asíncronas , pero también aquellas que requería respuesta por parte del consumidor de la cola, para ello explotamos la propiedad RPC que dispone RabbitMQ.
-<img src=https://www.rabbitmq.com/img/tutorials/python-six.png alt="enter image description here">
-La lógica es sencilla el cliente realiza una petición y se adjunta a la cabecera una propiedad denominada correlation_id, el cliente espera a recibir de vuelta el mensaje con el correlation_id enviado también adjuntado a la cabecera del mensaje.
-Por ejemplo imaginemos que queremos recibir el número de factura desde otro servicio lo podríamos realizar de la siguiente manera:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#8be9fd;font-style:italic>$this</span><span style=color:#ff79c6>-&gt;</span><span style=color:#50fa7b>result</span> <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>$this</span><span style=color:#ff79c6>-&gt;</span><span style=color:#50fa7b>rabbitMQ</span><span style=color:#ff79c6>-&gt;</span><span style=color:#50fa7b>requestRpc</span>(
-<span style=color:#8be9fd;font-style:italic>$id</span>,
-<span style=color:#f1fa8c>&#34;billing&#34;</span>,
-<span style=color:#f1fa8c>&#34;billing_return&#34;</span>,
-<span style=color:#f1fa8c>&#34;command.billing&#34;</span>,
-<span style=color:#f1fa8c>&#34;billing.1.query.income.getNextIncomeInvoiceNumber&#34;</span>,
-json_encode(<span style=color:#8be9fd;font-style:italic>$json</span>)
-);
-</code></pre></div><p>El cliente que debe emitir la respuesta, quedaría de la siguiente manera,.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=color:#ff79c6>public</span>  <span style=color:#ff79c6>function</span>  <span style=color:#50fa7b>handle</span>(IncomeGotNextInvoiceNumberEvent  <span style=color:#8be9fd;font-style:italic>$incomeGotNextInvoiceNumberEvent</span>)
-{
-<span style=color:#8be9fd;font-style:italic>$incomeNextInvoiceNumber</span> <span style=color:#ff79c6>=</span> json_encode(<span style=color:#8be9fd;font-style:italic>$incomeGotNextInvoiceNumberEvent</span><span style=color:#ff79c6>-&gt;</span><span style=color:#50fa7b>incomeNextInvoiceNumber</span>());
-<span style=color:#8be9fd;font-style:italic>$msg</span> <span style=color:#ff79c6>=</span> <span style=color:#8be9fd;font-style:italic>$incomeGotNextInvoiceNumberEvent</span><span style=color:#ff79c6>-&gt;</span><span style=color:#50fa7b>message</span>();
-<span style=color:#8be9fd;font-style:italic>$this</span><span style=color:#ff79c6>-&gt;</span><span style=color:#50fa7b>rabbitMQ</span><span style=color:#ff79c6>-&gt;</span><span style=color:#50fa7b>responseRpc</span>(<span style=color:#8be9fd;font-style:italic>$incomeGotNextInvoiceNumberEvent</span><span style=color:#ff79c6>-&gt;</span><span style=color:#50fa7b>incomeNextInvoiceNumber</span>(), <span style=color:#8be9fd;font-style:italic>$msg</span>);
-}
-</code></pre></div><p>El correlation_id va encapsulado dentro del $msg, por tanto el cliente que solicita se queda a la espera de recibir un mensaje con ese correlation_id, en la cola y el exchange correspondiente.</p>
-<p>Podeís encontrar el paquete en el siguiente enlace de <a href=https://github.com/GeeksHubs/RabbitMQ>github</a>
-El proyecto también está subido en <a href=https://packagist.org/packages/geekshubs/rabbitmq>packagist</a> para su uso con más de 1000 descargas.
-Y aquí os dejo un <a href="https://www.youtube.com/watch?v=wsMW1ylogl0">vídeo</a> de explicación de como funciona internamente.
-Y en este otro repo de <a href=https://github.com/xavi78/rabbitmqinlaravel>github</a> el código utilizado en el ejemplo del vídeo.
-Lo cierto es que lo tengo abandonado pero quiero retomarlo y os animo a que me ayudéis a mejorarlo y ampliar funcionalidades, con las últimas mejoras incluidas por RabbitMQ, como puede ser los <a href=https://blog.rabbitmq.com/posts/2021/07/rabbitmq-streams-overview>streams</a>.</p>
-<p>Nos vemos en un próximo post.</p>
 <p>Este paquete lo desarrolle para un proyecto de un cliente que requería realizar diversas tareas asíncronas , pero también aquellas que requería respuesta por parte del consumidor de la cola, para ello explotamos la propiedad RPC que dispone RabbitMQ.
 <img src=https://www.rabbitmq.com/img/tutorials/python-six.png alt="enter image description here">
 La lógica es sencilla el cliente realiza una petición y se adjunta a la cabecera una propiedad denominada correlation_id, el cliente espera a recibir de vuelta el mensaje con el correlation_id enviado también adjuntado a la cabecera del mensaje.
