@@ -1,5 +1,5 @@
 ---
-title:       "Boilerplate form node inversify and typescript"
+title:       "Skeletor for node inversify and typescript apps"
 subtitle:    "Plantilla para crear aplicaciones en noode enfocadas a negocio."
 description: "Es una estructura de aplicación en node para desarrollar con TypeScript y poder utilizar Inversify como DI y express"
 date:        2021-12-11
