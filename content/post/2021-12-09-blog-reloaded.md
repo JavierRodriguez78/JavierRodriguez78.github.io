@@ -6,7 +6,7 @@ date:        2021-12-09
 author:      "Xavi Rodríguez."
 image:       "img/blog.jpg"
 tags:        ["Blog"]
-categories:  ["General" ]
+categories:  ["General"]
 ---
 
 Hola a todos,

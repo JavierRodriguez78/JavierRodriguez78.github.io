@@ -1,6 +1,6 @@
 ---
 title:       "Mesa Redonda CTO Summit."
-subtitle:    "Mesa redonda sobre DevOps. "
+subtitle:    "Mesa redonda sobre DevOps."
 description: "Mesa Redonda que me dieron la oportunidad de moderar."
 date:        2021-12-11
 author:      "Xavi Rodríguez."
