@@ -13,3 +13,5 @@ Hace menos un año  me invitaron a moderar una mesa  en el [CToSummit](https://c
 No es un vídeo muy largo pero por si te interesa verlo aquí dejo el [enlace](https://www.youtube.com/watch?v=vS2HegazBRY).
 
 Y sobre todo dar las gracias [Geekshubs](https://www.geekshubs.com) y CToSummit por esta oportunidad.
+
+Nos vemos en otro post!!!
