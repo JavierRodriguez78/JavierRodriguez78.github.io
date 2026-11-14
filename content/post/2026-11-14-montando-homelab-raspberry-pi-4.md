@@ -5,6 +5,10 @@ date: 2026-11-14
 author: "Xavi Rodríguez"
 tags: ["homelab", "raspberry-pi", "docker", "devops", "tailscale", "cloudflare", "pihole", "linux"]
 categories: ["DevOps", "Homelab"]
+cover:
+  image: "img/homelab/homelab-raspberry-pi-architecture.png"
+  alt: "Arquitectura del homelab con Raspberry Pi 4: servicios Docker, Tailscale, Cloudflare y monitorización"
+  relative: false
 draft: false
 ---
 Hacía tiempo que tenía ganas de montar una infraestructura doméstica con la que poder experimentar, aprender y disponer de servicios propios sin depender constantemente de soluciones externas.
