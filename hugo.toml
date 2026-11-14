@@ -74,7 +74,7 @@ ignoreLogs = ["warning-goldmark-raw-html"]
     url = "https://github.com/JavierRodriguez78"
   [[params.socialIcons]]
     name = "linkedin"
-    url = "https://www.linkedin.com/in/javier-rodr%C3%ADguez-soler-ba466031"
+    url = "https://www.linkedin.com/in/javier-rodriguez-soler-ba466031/"
   [[params.socialIcons]]
     name = "x"
     url = "https://twitter.com/jaroso78_11"
