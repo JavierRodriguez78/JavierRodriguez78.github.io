@@ -1,25 +1,12 @@
 ---
 title: "Montando mi propio Homelab con Raspberry Pi 4: Docker, Pi-hole, Tailscale y Cloudflare"
-subtitle: "De una Raspberry Pi a una pequeña infraestructura doméstica: seguridad, monitorización, DNS y acceso remoto."
+description: "De una Raspberry Pi a una pequeña infraestructura doméstica: seguridad, monitorización, DNS y acceso remoto."
 date: 2026-11-14
 author: "Xavi Rodríguez"
-tags:
-  - homelab
-  - raspberry-pi
-  - docker
-  - devops
-  - tailscale
-  - cloudflare
-  - pihole
-  - linux
-categories:
-  - DevOps
-  - Homelab
+tags: ["homelab", "raspberry-pi", "docker", "devops", "tailscale", "cloudflare", "pihole", "linux"]
+categories: ["DevOps", "Homelab"]
 draft: false
 ---
-
-# Montando mi propio Homelab con Raspberry Pi 4
-
 Hacía tiempo que tenía ganas de montar una infraestructura doméstica con la que poder experimentar, aprender y disponer de servicios propios sin depender constantemente de soluciones externas.
 
 La idea inicial era sencilla: aprovechar una Raspberry Pi para centralizar servicios de red, mejorar la seguridad de mi conexión doméstica, monitorizar los dispositivos y disponer de acceso remoto cuando estuviera fuera de casa.

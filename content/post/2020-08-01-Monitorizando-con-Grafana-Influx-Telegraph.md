@@ -1,15 +1,16 @@
 ---
-title:       "Monitorizando nuestro servidores con Grafana, Influx Telegraph"
-subtitle:    "2º Parte"
+title: "Monitorizando nuestro servidores con Grafana, Influx Telegraph"
 description: "Como podemos monitorizar nuestra aplicación web."
-date:        2020-08-01
-author:      "Xavi Rodríguez."
-image:       "img/monitoring.jpg"
-tags:        ["Nginx","Grafana", "Influx", "Telegraph"]
-categories:  ["Tech"]
+date: 2020-08-01
+author: "Xavi Rodríguez"
+tags: ["nginx", "grafana", "influxdb", "telegraf"]
+categories: ["Tech"]
+cover:
+  image: "img/monitoring.jpg"
+  alt: "Pantalla con gráficas de monitorización"
+  relative: false
+draft: false
 ---
-
-
 Bueno vamos a acceder ahora al servidor cliente para poder enviarle métricas de nuestro servidor para ello vamos a utiliza telegraph 
 Configuramos nginx comprobamos si los módulos para geo y status de nginx estan activados.
 Añadimos el ćodigo suficiente para poder comprobar el status de nginx, para ello nos dirigimos a la carpeta 

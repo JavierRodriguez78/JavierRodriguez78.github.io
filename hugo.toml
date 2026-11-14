@@ -1,0 +1,157 @@
+baseURL = "https://javier-rodriguez.com/"
+locale = "es-ES"
+defaultContentLanguage = "es"
+title = "Javier Rodríguez"
+theme = "PaperMod"
+publishDir = "docs"
+enableRobotsTXT = true
+enableEmoji = true
+timeZone = "Europe/Madrid"
+hasCJKLanguage = false
+
+# Google Analytics 4: crea una propiedad GA4 y pon aquí el ID (empieza por G-).
+# El antiguo UA-159378701-1 (Universal Analytics) dejó de funcionar en julio de 2023.
+# [services.googleAnalytics]
+#   id = "G-XXXXXXXXXX"
+
+ignoreLogs = ["warning-goldmark-raw-html"]
+
+[pagination]
+  pagerSize = 10
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]   # JSON lo usa el buscador de PaperMod
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+[params]
+  env = "production"
+  title = "Javier Rodríguez"
+  description = "Blog de Xavi Rodríguez sobre DevOps, homelab, desarrollo de software y retroinformática."
+  keywords = ["DevOps", "homelab", "Raspberry Pi", "Docker", "PHP", "Laravel", "retroinformática", "blog"]
+  author = "Xavi Rodríguez"
+  images = ["img/me.jpg"]
+  DateFormat = "2 de January de 2006"
+  defaultTheme = "auto"
+  disableThemeToggle = false
+  mainSections = ["post"]
+
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+  ShowRssButtonInSectionTermList = true
+  ShowToc = true
+  TocOpen = false
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = true
+
+  [params.assets]
+    disableHLJS = true
+    favicon = "/img/me.jpg"
+    apple_touch_icon = "/img/me.jpg"
+
+  [params.label]
+    text = "Javier Rodríguez"
+    icon = "/img/me.jpg"
+    iconHeight = 35
+
+  [params.homeInfoParams]
+    Title = "Hola, soy Xavi 👋"
+    Content = "Software developer, friki y padre de familia. Escribo sobre DevOps, homelab, desarrollo de software y retroinformática."
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/JavierRodriguez78"
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/javier-rodr%C3%ADguez-soler-ba466031"
+  [[params.socialIcons]]
+    name = "x"
+    url = "https://twitter.com/jaroso78_11"
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:email@javier-rodriguez.com"
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+  [params.cover]
+    hidden = false
+    hiddenInList = false
+    hiddenInSingle = false
+    linkFullImages = true
+    responsiveImages = true
+
+  [params.editPost]
+    URL = "https://github.com/JavierRodriguez78/JavierRodriguez78.github.io/edit/main/content"
+    Text = "Sugerir cambios"
+    appendFilePath = true
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/post/"
+    weight = 10
+  [[menu.main]]
+    identifier = "archives"
+    name = "Archivo"
+    url = "/archives/"
+    weight = 20
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 30
+  [[menu.main]]
+    identifier = "search"
+    name = "Buscar"
+    url = "/search/"
+    weight = 40
+  [[menu.main]]
+    identifier = "about"
+    name = "Sobre mí"
+    url = "/about/"
+    weight = 50
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    style = "dracula"
+    noClasses = false
+    lineNos = false
+    codeFences = true
+    guessSyntax = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
+[privacy]
+  [privacy.x]
+    enableDNT = true
+  [privacy.youTube]
+    privacyEnhanced = true

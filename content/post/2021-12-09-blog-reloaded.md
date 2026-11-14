@@ -1,14 +1,16 @@
 ---
-title:       "Blog reloaded"
-subtitle:    "Estamos de vuelta!!!!"
+title: "Blog reloaded"
 description: "Regreso al blog después de más de 1 año sin publicar nada."
-date:        2021-12-09
-author:      "Xavi Rodríguez."
-image:       "img/blog.jpg"
-tags:        ["Blog"]
-categories:  ["General"]
+date: 2021-12-09
+author: "Xavi Rodríguez"
+tags: ["blog"]
+categories: ["General"]
+cover:
+  image: "img/blog.jpg"
+  alt: "Teclado y cuaderno"
+  relative: false
+draft: false
 ---
-
 Hola a todos,
 Después de mucho tiempo sin escribir nada me apetecía volver  a las andadas y escribir de nuevo en el blog,  la realidad es que durante estos últimos meses he tenido mucho trabajo entre cambio de empresa, cuestiones familiares, etc. me ha tenido apartado  y centrado en otros proyectos.
 Lo últimos 3 años han sido de mucho trabajo y de aprendizaje como CTO tanto en [Geekshubs](https://www.geekshubs.com) como en [Widitrade](https://widitrade.com), lo que me ha llevado a querer volver a la base y regresar de nuevo como programador, necesito volver a picar, y creo que el blog es un buen medio para seguir avanzando y aprendiendo así como dejar parte de este proceso de aprendizaje para que otros puedan si quieren nutrirse de él.

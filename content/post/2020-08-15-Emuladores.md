@@ -1,21 +1,23 @@
 ---
-title:       "Emuladores"
-subtitle:    "Vamos a entender como funcionan los emuladores."
+title: "Emuladores"
 description: "Artículo sobre emuladores."
-date:        2020-08-15
-author:      "Xavi Rodríguez."
-image:       "img/retro.jpg"
-tags:        ["Emuladores","Zx", "chip-8", "cpc-464"]
-categories:  ["Tech"]
+date: 2020-08-15
+author: "Xavi Rodríguez"
+tags: ["emuladores", "zx-spectrum", "chip-8", "amstrad-cpc"]
+categories: ["Tech"]
+cover:
+  image: "img/retro.jpg"
+  alt: "Ordenador retro"
+  relative: false
+draft: false
 ---
-
 Hace tiempo que quería meterme en el mundo de los emuladores y la verdad es que siempre me han llamado bastante la atención.  Por la complejidad técnica que conlleva tanto conocer el sistema que quieres emular, como por el desarrollo en sí.
 
 Además ya que tengo cierta edad, siempre me cae alguna lagrimita al ver una fotografía del [CPC 464 de Amstrad](https://es.wikipedia.org/wiki/Amstrad_CPC_464). 
 Con el que empecé mis pinitos con 12 años y me inició en el mundo de la programación  ya que con este equipo le acompañaba un  [libro](http://www.cpcmania.com/Docs/Manuals/Manual%20de%20Usuario%20Amstrad%20CPC%20464.pdf) de [Basic](https://es.wikipedia.org/wiki/BASIC).
 Al final del libro siempre había juegos escritos para que lo portaras a tu equipo.
   
-<center>![cpc](https://esacademic.com/pictures/eswiki/51/300px-Amstrad_CPC464.jpg)</center>
+![Amstrad CPC 464](/img/emuladores/amstrad-cpc464.jpg)
 
 
 **Antes de nada indicar que no soy especialista de ello**, simplemente en éste post recojo información sobre emulación para poder entender los conceptos básicos, así que voy a ello.
@@ -33,9 +35,7 @@ Para entender como funciona un **Emulador** debemos saber que este se encargará
 Para ello **Emularará** el sistema original  ejecutando las  instrucciones **[opCodes](https://es.wikipedia.org/wiki/C%C3%B3digo_de_operaci%C3%B3n)** de la **cpu**
 
 
-<center> 
-![opCodes](http://i.imgur.com/VUyLG31.png)
-</center>
+![Tabla de opCodes](/img/emuladores/opcodes.png)
 
 
 ## ¿Tipos de emulación?

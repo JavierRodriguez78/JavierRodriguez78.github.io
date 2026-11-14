@@ -1,14 +1,16 @@
 ---
-title:       "Monitorizando nuestro servidores con Grafana, Influx Telegraph"
-subtitle:    "1º Parte"
+title: "Monitorizando nuestro servidores con Grafana, Influx Telegraph"
 description: "Como podemos monitorizar nuestra aplicación web."
-date:        2020-07-01
-author:      "Xavi Rodríguez."
-image:       "img/monitoring.jpg"
-tags:        ["Nginx","Grafana", "Influx", "Telegraph"]
-categories:  ["Tech"]
+date: 2020-07-01
+author: "Xavi Rodríguez"
+tags: ["nginx", "grafana", "influxdb", "telegraf"]
+categories: ["Tech"]
+cover:
+  image: "img/monitoring.jpg"
+  alt: "Pantalla con gráficas de monitorización"
+  relative: false
+draft: false
 ---
-
 Bueno muchas veces tenemos que monitorizar diveras apps, y para no estar pasando de un pantalla a otra nos interesa tenerlo centralizado en un único punto.
 
 En la máquina Bastión
@@ -80,32 +82,32 @@ $> docker-compose up
 Podemos comprobar si está todo correcto si nos dirigimos a:
 **http://[ip de nuestra máquina]:3000**
 Y comprobamos que tenemos acceso a **Grafana.**
-![https://miro.medium.com/max/1454/0*IB_2fT2-mQihHP0l](https://miro.medium.com/max/1454/0*IB_2fT2-mQihHP0l)
+![Pantalla de login de Grafana](/img/monitoring/grafana-login.png)
 Los datos de acceso son
 
  - username:admin
  - password:admin
 
 Nos pedirá que cambiemos los datos de acceso:
-![https://kifarunix.com/wp-content/uploads/2019/01/grafana-reset-pass.png](https://kifarunix.com/wp-content/uploads/2019/01/grafana-reset-pass.png)
+![Cambio de contraseña en Grafana](/img/monitoring/grafana-reset-pass.png)
 
 Ok una vez dentro lo primero que debemos configurar es nuestra fuente de datos que en nuestro aso será **influxdb**. Para ello seleccionaremos añadir una fuente de datos.
-![https://miro.medium.com/max/1833/0*en5CBeaGTKe9Qvfu](https://miro.medium.com/max/1833/0*en5CBeaGTKe9Qvfu)
+![Añadir data source en Grafana](/img/monitoring/grafana-add-datasource.png)
 Seleccionamos **InfluxDB** y configuramos los siguientes campos:
 
  - URL: https://influxdb:8086
  - Database: telegraf
  - User: telegraf
  - Password: secretpassword
- ![https://miro.medium.com/max/915/0*FECckMUhT-v_vaXH](https://miro.medium.com/max/915/0*FECckMUhT-v_vaXH)
+ ![Configuración del data source InfluxDB](/img/monitoring/grafana-import.png)
 Cuando ya tengamos los datos, pulsamos sobre el botón save/test, si todo ha ido bién debería aparecer un mensaje como el siguiente:
-![https://miro.medium.com/max/1103/0*t02qDBYSGrqP2dew](https://miro.medium.com/max/1103/0*t02qDBYSGrqP2dew)
+![Importar dashboard en Grafana](/img/monitoring/grafana-dashboard-id.png)
 
 Bueno vamos a instalar nuestro primer dashboard predefenido para obtener los datos de las máquinas.
 Para ello vamos a descarganos un dashboard ya creado desde la propia web de grafana, para ello nos dirigiremos a:
 [https://grafana.com/grafana/dashboards/928](https://grafana.com/grafana/dashboards/928)
 E importaremos este dashboard a nuestro grafana, en la pantalla principal pulsamos importar e indicamos el id del dashboard
-![https://miro.medium.com/max/374/0*5-AP0Xow6lfvvc0E](https://miro.medium.com/max/374/0*5-AP0Xow6lfvvc0E)
+![Opciones de importación del dashboard](/img/monitoring/grafana-import-options.png)
 
 Una vez importado debemos seleccionar la fuente en nuestro caso influxdb.
-![](https://miro.medium.com/max/1079/0*c1azaaywigf9RPjp)
+![Dashboard de Telegraf en Grafana](/img/monitoring/grafana-telegraf-dashboard.png)

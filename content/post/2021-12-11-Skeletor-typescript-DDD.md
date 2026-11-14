@@ -1,14 +1,16 @@
 ---
-title:       "Skeletor for node inversify and typescript apps"
-subtitle:    "Plantilla para crear aplicaciones en noode enfocadas a negocio."
+title: "Skeletor for node inversify and typescript apps"
 description: "Es una estructura de aplicación en node para desarrollar con TypeScript y poder utilizar Inversify como DI y express"
-date:        2021-12-11
-author:      "Xavi Rodríguez."
-image:       "img/clipper.jpg"
-tags:        ["Typescript","NodeJS","Inversify","TypeORM","Code"]
-categories:  ["Proyectos"]
+date: 2021-12-11
+author: "Xavi Rodríguez"
+tags: ["typescript", "nodejs", "inversify", "typeorm", "code"]
+categories: ["Proyectos"]
+cover:
+  image: "img/clipper.jpg"
+  alt: "Código en pantalla"
+  relative: false
+draft: false
 ---
-
 Este proyecto lo cree como base para desarrollo de aplicaciones internas dentro de Geekshubs, con el objetivo de disponer de un entorno rápido de desarrollo e intentado acercar ciertas características de otros lenguajes a JavaScript enfocada a la programación orientada a objetos, por ejemplo la disponibilidad de Interfaces, tipado, etc.
 
 Además incluye como ORM, [TypeOrm](https://typeorm.io/#/) que nos permite disponer de diversas conexiones a diferentes tipos de Persistencia, tanto BD relacionales como no relacional y además con [Inversify](https://inversify.io/) que nos permite disponer de un Contenedor de dependencias donde poder inyectar allí donde nos hace falta.

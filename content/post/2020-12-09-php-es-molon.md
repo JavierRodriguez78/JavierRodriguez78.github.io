@@ -1,19 +1,19 @@
 ---
-title:       "Php es Molón?"
-subtitle:    "Php no está muerto sigue evolucionando."
+title: "Php es Molón?"
 description: "Sólo es mi opinión sobre php y su evolución."
-date:        2020-12-09
-author:      "Xavi Rodríguez."
-image:       "img/php.jpg"
-tags:        ["Php","laravel", "Symfony", "Code"]
-categories:  ["Tech", "Opinión" ]
+date: 2020-12-09
+author: "Xavi Rodríguez"
+tags: ["php", "laravel", "symfony", "code"]
+categories: ["Tech", "Opinión"]
+cover:
+  image: "img/php.jpg"
+  alt: "Logotipo de PHP"
+  relative: false
+draft: false
 ---
 Aquí va otro post de **opinión**, pero desde la perspectiva de la experiencia ya que he trabajado durante los últimos proyectos en PHP, en algunos casos con [Laravel](https://laravel.com/) y en otros con [Symfony.](https://symfony.com/)
 Tampoco quiero centrarme tanto en los frameworks sino más bién en el lenguaje y el ecosistema que lo envuelve que es bastante interesante.
-<center>
-
-![image-php](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSNDA-zXkIHWtfQIfvRf6sFGw6cvLtHnOMo1wre_G0UoKZmWJuZ)
-</center>
+![Logotipo de PHP](/img/php/php-logo.svg)
 
 ## Un poco de historia.
 
