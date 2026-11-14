@@ -278,10 +278,6 @@ sudo tailscale set --advertise-routes=RED_DOMESTICA/24
 
 Después es necesario autorizar las opciones correspondientes desde la consola de administración de Tailscale.
 
-![Configuración de Tailscale y rutas de red](/img/homelab/tailscale-network.png)
-
-*Consola de administración de Tailscale con la ruta de la red doméstica y el Exit Node.*
-
 En Android he instalado Tailscale y seleccionado la Raspberry como Exit Node.
 
 El resultado es que, cuando estoy fuera de casa:
