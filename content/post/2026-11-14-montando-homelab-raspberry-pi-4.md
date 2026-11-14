@@ -53,7 +53,7 @@ La idea es separar las responsabilidades:
 
 La arquitectura queda representada en el siguiente diagrama.
 
-![Diagrama de arquitectura del Homelab con Raspberry Pi 4](/img/homelab/homelab-architecture.png)
+![Diagrama de arquitectura del Homelab con Raspberry Pi 4](/img/homelab/homelab-raspberry-pi-architecture.png)
 
 *Arquitectura lógica del Homelab: servicios Docker, conectividad, acceso remoto y monitorización.*
 
