@@ -244,7 +244,7 @@ En este proyecto he utilizado una ruta privada para acceder a la red doméstica.
 La red configurada es:
 
 ```text
-192.168.86.0/24
+RED_DOMESTICA/24
 ```
 
 Esto permite acceder a los recursos privados de la red mediante la infraestructura de Cloudflare Zero Trust y WARP.
@@ -262,7 +262,7 @@ Una vez autenticada la Raspberry, he configurado dos funciones:
 
 La primera permite enviar el tráfico general de Internet a través de la Raspberry.
 
-La segunda permite acceder a la red doméstica `192.168.86.0/24`.
+La segunda permite acceder a la red doméstica `RED_DOMESTICA/24`.
 
 La configuración básica para anunciar la Raspberry como Exit Node es:
 
@@ -273,7 +273,7 @@ sudo tailscale set --advertise-exit-node
 Y para anunciar la red doméstica:
 
 ```bash
-sudo tailscale set --advertise-routes=192.168.86.0/24
+sudo tailscale set --advertise-routes=RED_DOMESTICA/24
 ```
 
 Después es necesario autorizar las opciones correspondientes desde la consola de administración de Tailscale.
