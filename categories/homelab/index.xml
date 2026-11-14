@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Homelab on Javier Rodríguez</title>
+    <link>https://javier-rodriguez.com/categories/homelab/</link>
+    <description>Recent content in Homelab on Javier Rodríguez</description>
+    <image>
+      <title>Javier Rodríguez</title>
+      <url>https://javier-rodriguez.com/img/me.jpg</url>
+      <link>https://javier-rodriguez.com/img/me.jpg</link>
+    </image>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <lastBuildDate>Sat, 14 Nov 2026 00:00:00 +0100</lastBuildDate>
+    <atom:link href="https://javier-rodriguez.com/categories/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Montando mi propio Homelab con Raspberry Pi 4: Docker, Pi-hole, Tailscale y Cloudflare</title>
+      <link>https://javier-rodriguez.com/post/2026-11-14-montando-homelab-raspberry-pi-4/</link>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 +0100</pubDate>
+      <guid>https://javier-rodriguez.com/post/2026-11-14-montando-homelab-raspberry-pi-4/</guid>
+      <description>De una Raspberry Pi a una pequeña infraestructura doméstica: seguridad, monitorización, DNS y acceso remoto.</description>
+    </item>
+  </channel>
+</rss>

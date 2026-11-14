@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Filosofia on Javier Rodríguez</title>
+    <link>https://javier-rodriguez.com/tags/filosofia/</link>
+    <description>Recent content in Filosofia on Javier Rodríguez</description>
+    <image>
+      <title>Javier Rodríguez</title>
+      <url>https://javier-rodriguez.com/img/me.jpg</url>
+      <link>https://javier-rodriguez.com/img/me.jpg</link>
+    </image>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <lastBuildDate>Tue, 14 Dec 2021 00:00:00 +0100</lastBuildDate>
+    <atom:link href="https://javier-rodriguez.com/tags/filosofia/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mesa Redonda CTO Summit.</title>
+      <link>https://javier-rodriguez.com/post/2021-12-14-mesa-redonda-ctosummit/</link>
+      <pubDate>Tue, 14 Dec 2021 00:00:00 +0100</pubDate>
+      <guid>https://javier-rodriguez.com/post/2021-12-14-mesa-redonda-ctosummit/</guid>
+      <description>Mesa Redonda que me dieron la oportunidad de moderar.</description>
+    </item>
+  </channel>
+</rss>
