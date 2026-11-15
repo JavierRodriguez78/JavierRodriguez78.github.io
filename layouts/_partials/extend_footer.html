@@ -10,7 +10,7 @@
 </style>
 <div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
   <div class="cb-inner">
-    <p>Uso cookies de <strong>Google Analytics</strong> para conocer cómo se usa el blog. Solo se activan si las aceptas. Más información en la <a href="{{ "cookies/" | relLangURL }}">política de cookies</a>.</p>
+    <p>Uso cookies de <strong>Google Analytics</strong> para conocer cómo se usa el blog. Solo se activan si las aceptas. Más información en la <a href="{{ "cookies/" | relLangURL }}">política de privacidad y cookies</a>.</p>
     <div class="cb-actions">
       <button type="button" class="cb-reject" id="cookie-reject">Rechazar</button>
       <button type="button" class="cb-accept" id="cookie-accept">Aceptar</button>
@@ -24,12 +24,25 @@
   function set(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
   function show() { banner.style.display = 'block'; }
   function hide() { banner.style.display = 'none'; }
+  // Al rechazar se borran las cookies de Google Analytics ya instaladas
+  function clearGA() {
+    var host = location.hostname.split('.'), domains = [location.hostname];
+    for (var i = 1; i < host.length - 1; i++) domains.push('.' + host.slice(i).join('.'));
+    document.cookie.split(';').forEach(function (c) {
+      var n = c.split('=')[0].trim();
+      if (n === '_ga' || n.indexOf('_ga_') === 0 || n === '_gid') {
+        domains.forEach(function (d) { document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' + d; });
+        document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+      }
+    });
+  }
+  if (get() === 'rejected') clearGA();
   if (!get()) show();
   document.getElementById('cookie-accept').addEventListener('click', function () {
     set('accepted'); hide(); if (window.loadAnalytics) window.loadAnalytics();
   });
   document.getElementById('cookie-reject').addEventListener('click', function () {
-    set('rejected'); hide();
+    set('rejected'); hide(); clearGA();
   });
   // Permite cambiar la decisión desde el enlace "Configurar cookies"
   window.openCookieSettings = function () {
