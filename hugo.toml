@@ -37,6 +37,10 @@ ignoreLogs = ["warning-goldmark-raw-html"]
 [minify]
   disableXML = true
   minifyOutput = true
+  # Conserva las comillas de los atributos (name="msvalidate.01"). Sin ellas el
+  # verificador de Bing Webmaster Tools no reconoce la meta de verificación.
+  [minify.tdewolff.html]
+    keepQuotes = true
 
 [params]
   env = "production"
