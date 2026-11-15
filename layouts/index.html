@@ -13,6 +13,13 @@
   </p>
 </section>
 
+<nav class="pf-subnav" aria-label="Secciones">
+  <a href="#experiencia">Experiencia</a>
+  <a href="#proyectos">Proyectos</a>
+  <a href="#sobre-mi">Sobre mí</a>
+  <a href="#blog">Blog</a>
+</nav>
+
 <section id="experiencia" class="pf-section">
   <h2>Experiencia laboral</h2>
   <ol class="pf-exp">
@@ -54,7 +61,7 @@
         <h3>{{ .title }}</h3>
         <p class="pf-tags">{{ range .tags }}<span>{{ . }}</span>{{ end }}</p>
         <p>{{ .description }}</p>
-        <p>{{ range .links }}<a class="pf-btn pf-sm" href="{{ .url }}">{{ .name }}</a> {{ end }}</p>
+        <p class="pf-links">{{ range .links }}<a class="pf-icon" href="{{ .url }}" title="{{ .name }}" aria-label="{{ .name }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }}>{{ partial "pf-icon.html" .icon }}</a>{{ end }}</p>
       </div>
     </article>
     {{- end }}

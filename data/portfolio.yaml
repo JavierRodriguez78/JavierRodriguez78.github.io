@@ -54,15 +54,16 @@ projects:
     description: "Un framework propio para Node.js. Cuento por qué y cómo lo construyo en una serie de posts."
     image: "/img/xtaskjs/xtaskjs-logo.png"
     links:
-      - { name: "Serie", url: "/post/2026-11-15-xtaskjs-01-por-que-un-framework-propio/" }
-      - { name: "Código", url: "https://github.com/JavierRodriguez78" }
+      - { name: "Web", icon: "web", url: "https://xtaskjs.io/" }
+      - { name: "Código", icon: "github", url: "https://github.com/xtaskjs" }
+      - { name: "Serie de posts", icon: "post", url: "/post/2026-11-15-xtaskjs-01-por-que-un-framework-propio/" }
   - title: "Skeletor TypeScript DDD"
     tags: ["TypeScript", "DDD", "Arquitectura"]
-    description: "Esqueleto de proyecto en TypeScript con Domain-Driven Design."
+    description: "Esqueleto de proyecto en TypeScript con Domain-Driven Design, DI y TypeORM."
     image: "/img/back.jpg"
     links:
-      - { name: "Post", url: "/post/2021-12-11-skeletor-typescript-ddd/" }
-      - { name: "Código", url: "https://github.com/JavierRodriguez78" }
+      - { name: "Código", icon: "github", url: "https://github.com/GeeksHubs/typescript-di-typeorm-ddd-skeletor" }
+      - { name: "Post", icon: "post", url: "/post/2021-12-11-skeletor-typescript-ddd/" }
 
 certs:
   - "AWS Cloud Practitioner Essentials"

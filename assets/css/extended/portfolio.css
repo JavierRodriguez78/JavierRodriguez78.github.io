@@ -6,10 +6,10 @@
 .pf-btn{display:inline-block;margin:.2rem;padding:.4rem 1rem;border:1px solid var(--border);border-radius:8px;background:var(--code-bg)}
 .pf-btn:hover{border-color:var(--primary)}
 .pf-sm{padding:.2rem .7rem;font-size:.85rem}
-.pf-section{margin-top:3rem}
+.pf-section{margin-top:2.5rem}
 .pf-exp{list-style:none;padding:0}
-.pf-exp li{display:flex;gap:1rem;margin-bottom:1.5rem}
-.pf-num{font-weight:700;color:var(--secondary)}
+.pf-section .pf-exp>li{display:grid;grid-template-columns:2.5rem minmax(0,1fr);column-gap:1rem;align-items:start;margin:0 0 1.5rem;padding:0;list-style:none}
+.pf-num{font-weight:700;color:var(--secondary);white-space:nowrap;line-height:1.6}
 .pf-exp h3{margin:0}.pf-exp small{font-weight:400;color:var(--secondary)}
 .pf-period{font-size:.85rem;color:var(--secondary)}
 .pf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
@@ -20,3 +20,11 @@
 .pf-post{display:flex;justify-content:space-between;gap:1rem;padding:.4rem 0;border-bottom:1px solid var(--border)}
 .pf-post time{color:var(--secondary);font-size:.85rem;white-space:nowrap}
 .pf-earlier summary{cursor:pointer;margin-bottom:1rem;color:var(--secondary)}
+.pf-section{scroll-margin-top:4.5rem}
+html{scroll-behavior:smooth}
+.pf-subnav{position:sticky;top:var(--header-height,60px);z-index:5;display:flex;justify-content:center;gap:.4rem;flex-wrap:wrap;padding:.5rem 0;margin-top:1.5rem;background:var(--theme);border-bottom:1px solid var(--border)}
+.pf-subnav a{padding:.25rem .8rem;border-radius:999px;font-size:.9rem;color:var(--secondary)}
+.pf-subnav a:hover{background:var(--code-bg);color:var(--primary)}
+.pf-links{display:flex;gap:.5rem;margin:.5rem 0 0}
+.pf-icon{display:inline-flex;padding:.4rem;border:1px solid var(--border);border-radius:8px;background:var(--code-bg)}
+.pf-icon:hover{border-color:var(--primary)}
