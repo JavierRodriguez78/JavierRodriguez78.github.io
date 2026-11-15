@@ -5,6 +5,7 @@ date: {{ .Date }}
 author: "Xavi Rodríguez"
 tags: []
 categories: []
+series: []
 cover:
   image: ""
   alt: ""

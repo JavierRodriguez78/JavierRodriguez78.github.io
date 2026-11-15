@@ -16,6 +16,12 @@ hasCJKLanguage = false
 
 ignoreLogs = ["warning-goldmark-raw-html"]
 
+# Al declarar taxonomías hay que repetir las de por defecto (tags y categories).
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  series = "series"
+
 [pagination]
   pagerSize = 10
 
@@ -125,6 +131,11 @@ ignoreLogs = ["warning-goldmark-raw-html"]
     name = "Tags"
     url = "/tags/"
     weight = 30
+  [[menu.main]]
+    identifier = "series"
+    name = "Series"
+    url = "/series/"
+    weight = 35
   [[menu.main]]
     identifier = "search"
     name = "Buscar"
