@@ -1,0 +1,78 @@
+{{- define "main" }}
+{{- $d := site.Data.portfolio }}
+<section class="pf-hero">
+  <img class="pf-avatar" src="/img/me.jpg" alt="{{ site.Params.author }}" width="112" height="112">
+  {{- with $d.badge }}<a class="pf-badge" href="{{ (index site.Params.socialIcons 1).url }}" target="_blank" rel="noopener"><span class="pf-dot"></span>{{ . }}</a>{{ end }}
+  <h1>Hola, soy Xavi 👋</h1>
+  <p class="pf-role">{{ $d.role }} · {{ $d.location }}</p>
+  <p>{{ $d.intro }}</p>
+  <p class="pf-cta">
+    <a class="pf-btn" href="mailto:email@javier-rodriguez.com">Email</a>
+    <a class="pf-btn" href="https://www.linkedin.com/in/javier-rodriguez-soler-ba466031/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="pf-btn" href="https://github.com/JavierRodriguez78" target="_blank" rel="noopener">GitHub</a>
+  </p>
+</section>
+
+<section id="experiencia" class="pf-section">
+  <h2>Experiencia laboral</h2>
+  <ol class="pf-exp">
+    {{- range $i, $e := $d.experience }}
+    <li>
+      <span class="pf-num">{{ printf "%02d" (add $i 1) }}</span>
+      <div>
+        <h3>{{ $e.title }} <small>· {{ $e.company }}</small></h3>
+        {{- with $e.period }}<div class="pf-period">{{ . }}</div>{{ end }}
+        <p>{{ $e.description }}</p>
+      </div>
+    </li>
+    {{- end }}
+  </ol>
+  <details class="pf-earlier">
+    <summary>Trayectoria anterior (prevención de riesgos laborales)</summary>
+    <ol class="pf-exp">
+      {{- range $i, $e := $d.earlier }}
+      <li>
+        <span class="pf-num">·</span>
+        <div>
+          <h3>{{ $e.title }} <small>· {{ $e.company }}</small></h3>
+          <div class="pf-period">{{ $e.period }}</div>
+          <p>{{ $e.description }}</p>
+        </div>
+      </li>
+      {{- end }}
+    </ol>
+  </details>
+</section>
+
+<section id="proyectos" class="pf-section">
+  <h2>Proyectos</h2>
+  <div class="pf-grid">
+    {{- range $d.projects }}
+    <article class="pf-card">
+      <img src="{{ .image }}" alt="{{ .title }}" loading="lazy">
+      <div class="pf-card-body">
+        <h3>{{ .title }}</h3>
+        <p class="pf-tags">{{ range .tags }}<span>{{ . }}</span>{{ end }}</p>
+        <p>{{ .description }}</p>
+        <p>{{ range .links }}<a class="pf-btn pf-sm" href="{{ .url }}">{{ .name }}</a> {{ end }}</p>
+      </div>
+    </article>
+    {{- end }}
+  </div>
+</section>
+
+<section id="sobre-mi" class="pf-section">
+  <h2>Sobre mí</h2>
+  {{- with site.GetPage "/about" }}{{ .Content }}{{ end }}
+  <h3>Formación y certificaciones</h3>
+  <ul>{{ range $d.certs }}<li>{{ . }}</li>{{ end }}</ul>
+</section>
+
+<section id="blog" class="pf-section">
+  <h2>Últimos posts</h2>
+  {{- range first 5 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+  <article class="pf-post"><a href="{{ .RelPermalink }}">{{ .Title }}</a><time>{{ .Date | time.Format site.Params.DateFormat }}</time></article>
+  {{- end }}
+  <p><a href="/post/">Ver todos los posts →</a></p>
+</section>
+{{- end }}

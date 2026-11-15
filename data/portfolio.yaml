@@ -1,0 +1,72 @@
+# Datos del portfolio de la home (fuente: LinkedIn).
+badge: "Disponible para hablar"
+role: "Software Manager · DevOps · ex CTO"
+location: "Burjassot, Valencia"
+intro: "Llevo desde los 14 años (con un Amstrad CPC 464) metido en la informática. Soy Software Manager en Openbank Pay y he sido CTO de GeeksHubs y Widitrade y director del Bootcamp DevOps de GeeksHubs Academy. Me muevo entre desarrollo e infraestructura: DevOps, homelab y todo lo que se pueda automatizar."
+
+experience:
+  - title: "Software Manager"
+    company: "Openbank Pay (Open Digital Services)"
+    period: "oct. 2022 – actualidad"
+    description: "Gestión de software en Openbank Pay. Modalidad híbrida, Comunidad Valenciana."
+  - title: "Director Bootcamp DevOps"
+    company: "GeeksHubs Academy"
+    period: "ene. 2019 – dic. 2024"
+    description: "Gestión de clases, profesorado y alumnado, coordinación del equipo docente y ajuste del contenido formativo a las necesidades del mercado."
+  - title: "Programador full stack"
+    company: "Power Electronics"
+    period: "dic. 2021 – oct. 2022"
+    description: "Nest.js, Angular, TypeScript, Redis, RabbitMQ, CQRS, Event Sourcing, arquitectura hexagonal, Mongo/SQL, Ansible, Socket.io e integración con SAP."
+  - title: "CTO"
+    company: "Widitrade"
+    period: "sept. 2021 – dic. 2021"
+    description: "Dirección técnica en Madrid."
+  - title: "Director de TI / CTO"
+    company: "GeeksHubs"
+    period: "ago. 2018 – sept. 2021"
+    description: "Gestión de proyectos, equipos e infraestructura (AWS, Terraform, Ansible). Desarrollo para clientes en Java, Spring Boot/Cloud, PHP, Laravel, Symfony, Node.js, Nest.js, React, Angular y Vue. Formación en empresas como Diputación de Valencia, Unión Alcoyana, Edicom, Avantio, AquaService, All4Business, TomasGreg y Ribera Salud: Java, Kafka, Jenkins, Ansible, AWS, TDD, microservicios y refactoring."
+  - title: "Desarrollador de software"
+    company: "Rumbo Sistemas"
+    period: "mar. 2017 – mar. 2018"
+    description: "Java, C#, WebServices y T-SQL."
+  - title: "BackEnd Developer"
+    company: "GeeksHubs"
+    period: "jun. 2016 – ago. 2018"
+    description: "Full stack M.E.A.N. y mantenimiento de sistemas. Antes, prácticas (nov. 2015 – jun. 2016) con Node.js, PHP/Symfony, Phonegap e Ionic."
+
+earlier:
+  - title: "Responsable de Calidad, Medio Ambiente y Prevención"
+    company: "Cyes Infraestructuras"
+    period: "mar. 2008 – oct. 2014"
+    description: "Gerencia de obras marítimas: planes de seguridad y salud, calidad, medio ambiente y auditorías internas."
+  - title: "Responsable de construcción, servicio de prevención ajeno"
+    company: "CEPERSA"
+    period: "mar. 2002 – mar. 2008"
+    description: "Prevención de riesgos laborales, evaluaciones y planes de emergencia, coordinando un equipo de 4 técnicos."
+  - title: "Técnico de Prevención de Riesgos Laborales"
+    company: "Estudis i Prevenció"
+    period: "nov. 1999 – mar. 2002"
+    description: "Evaluaciones de riesgos, planes de seguridad y salud y formación."
+
+projects:
+  - title: "XtaskJS"
+    tags: ["TypeScript", "Node.js", "Framework"]
+    description: "Un framework propio para Node.js. Cuento por qué y cómo lo construyo en una serie de posts."
+    image: "/img/xtaskjs/xtaskjs-logo.png"
+    links:
+      - { name: "Serie", url: "/post/2026-11-15-xtaskjs-01-por-que-un-framework-propio/" }
+      - { name: "Código", url: "https://github.com/JavierRodriguez78" }
+  - title: "Skeletor TypeScript DDD"
+    tags: ["TypeScript", "DDD", "Arquitectura"]
+    description: "Esqueleto de proyecto en TypeScript con Domain-Driven Design."
+    image: "/img/back.jpg"
+    links:
+      - { name: "Post", url: "/post/2021-12-11-skeletor-typescript-ddd/" }
+      - { name: "Código", url: "https://github.com/JavierRodriguez78" }
+
+certs:
+  - "AWS Cloud Practitioner Essentials"
+  - "Scrum Manager"
+  - "Despliegue de aplicaciones en la nube de AWS (UPV)"
+  - "Desarrollo de aplicaciones con Java 12/13 (UPV)"
+  - "Desarrollo de aplicaciones móviles con PhoneGap"
