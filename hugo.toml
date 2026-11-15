@@ -4,7 +4,8 @@ defaultContentLanguage = "es"
 title = "Javier Rodríguez"
 theme = "PaperMod"
 publishDir = "docs"
-enableRobotsTXT = true
+enableRobotsTXT = true   # genera /robots.txt a partir de layouts/robots.txt
+enableGitInfo = true     # <lastmod> real en sitemap, og:article:modified_time y JSON-LD
 enableEmoji = true
 timeZone = "Europe/Madrid"
 hasCJKLanguage = false
@@ -15,6 +16,11 @@ hasCJKLanguage = false
 #   id = "G-XXXXXXXXXX"
 
 ignoreLogs = ["warning-goldmark-raw-html"]
+
+# Fecha de última modificación: manda el `lastmod` del front matter y, si no
+# existe, la fecha del último commit que tocó el fichero.
+[frontmatter]
+  lastmod = ["lastmod", ":git", "date", "publishDate"]
 
 # Al declarar taxonomías hay que repetir las de por defecto (tags y categories).
 [taxonomies]
@@ -43,6 +49,33 @@ ignoreLogs = ["warning-goldmark-raw-html"]
   defaultTheme = "auto"
   disableThemeToggle = false
   mainSections = ["post"]
+
+  # Verificación de propiedad en las consolas de los buscadores. Pega aquí el
+  # valor del atributo `content` de la meta que te da cada una y descomenta:
+  #   Google -> https://search.google.com/search-console
+  #   Bing   -> https://www.bing.com/webmasters (también alimenta a DuckDuckGo, Yahoo y Ecosia)
+  #   Yandex -> https://webmaster.yandex.com
+  [params.analytics.google]
+     SiteVerificationTag = "zQ3XOZFrNLkLLzDfnPaCEIHoAq2KxWrmqAq6XXP143A""
+  [params.analytics.bing]
+     SiteVerificationTag = "8145045E4F80D1E22AFB79133FD618D5"
+  # [params.analytics.yandex]
+  #   SiteVerificationTag = "XXXXXXXXXXXXXXXX"
+
+  # Datos estructurados (JSON-LD): el blog es de una persona, no de una empresa.
+  # sameAs enlaza los perfiles que son "la misma entidad"; sin esta lista el tema
+  # usaría socialIcons y colaría el mailto: y el RSS.
+  [params.schema]
+    publisherType = "Person"
+    sameAs = [
+      "https://github.com/JavierRodriguez78",
+      "https://www.linkedin.com/in/javier-rodriguez-soler-ba466031/",
+      "https://twitter.com/jaroso78_11",
+    ]
+
+  # twitter:site / twitter:creator en las Twitter Cards
+  [params.social]
+    twitter = "jaroso78_11"
 
   ShowReadingTime = true
   ShowShareButtons = true

@@ -1,0 +1,9 @@
+{{- /* Sobrescribe el robots.txt de PaperMod. Se publica gracias a enableRobotsTXT = true. */ -}}
+User-agent: *
+{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
+Allow: /
+{{- else }}
+Disallow: /
+{{- end }}
+
+Sitemap: {{ "sitemap.xml" | absURL }}

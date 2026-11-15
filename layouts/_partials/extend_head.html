@@ -1,0 +1,34 @@
+{{- /* Metas SEO adicionales a las que ya genera PaperMod (robots, canonical,
+       description, Open Graph, Twitter Cards y JSON-LD de BlogPosting). */ -}}
+{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
+
+{{- /* Permite a Google/Bing mostrar snippets completos e imágenes grandes
+       (necesario para Discover). Se suma al "index, follow" del tema. */ -}}
+{{- if ne .Params.robotsNoIndex true }}
+<meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+{{- end }}
+
+{{- /* Autor en las Twitter Cards (el tema solo emite twitter:site) */ -}}
+{{- with site.Params.social }}
+  {{- if reflect.IsMap . }}
+    {{- with .twitter }}
+<meta name="twitter:creator" content="@{{ strings.TrimPrefix "@" . }}">
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- /* WebSite: es lo que usa Google para el nombre del sitio en los resultados */ -}}
+{{- if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.Title }},
+  "url": {{ site.Home.Permalink }},
+  "description": {{ site.Params.description }},
+  "inLanguage": {{ site.Language.Locale | default site.Language.Lang }}
+}
+</script>
+{{- end }}
+
+{{- end }}
