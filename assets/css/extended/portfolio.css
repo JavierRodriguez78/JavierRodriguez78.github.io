@@ -28,3 +28,6 @@ html{scroll-behavior:smooth}
 .pf-links{display:flex;gap:.5rem;margin:.5rem 0 0}
 .pf-icon{display:inline-flex;padding:.4rem;border:1px solid var(--border);border-radius:8px;background:var(--code-bg)}
 .pf-icon:hover{border-color:var(--primary)}
+.pf-cta{justify-content:center}
+/* Menú: "Buscar" como lupa */
+#menu a[href$="/search/"] span{display:inline-block;width:20px;height:20px;font-size:0;vertical-align:middle;background-color:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E") center/contain no-repeat}

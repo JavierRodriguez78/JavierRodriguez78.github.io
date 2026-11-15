@@ -158,21 +158,6 @@ ignoreLogs = ["warning-goldmark-raw-html"]
 
 [menu]
   [[menu.main]]
-    identifier = "experiencia"
-    name = "Experiencia"
-    url = "/#experiencia"
-    weight = 10
-  [[menu.main]]
-    identifier = "proyectos"
-    name = "Proyectos"
-    url = "/#proyectos"
-    weight = 20
-  [[menu.main]]
-    identifier = "sobre-mi"
-    name = "Sobre mí"
-    url = "/#sobre-mi"
-    weight = 30
-  [[menu.main]]
     identifier = "posts"
     name = "Blog"
     url = "/post/"
@@ -188,8 +173,13 @@ ignoreLogs = ["warning-goldmark-raw-html"]
     url = "/series/"
     weight = 60
   [[menu.main]]
+    identifier = "about"
+    name = "Sobre mí"
+    url = "/about/"
+    weight = 65
+  [[menu.main]]
     identifier = "search"
-    name = "Buscar"
+    name = "Buscar"   # se muestra como lupa (CSS en portfolio.css)
     url = "/search/"
     weight = 70
 

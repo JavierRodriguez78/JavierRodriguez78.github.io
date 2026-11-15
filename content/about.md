@@ -1,6 +1,7 @@
 ---
 title: "Sobre mí"
 description: "Quién es Xavi Rodríguez: desarrollador de software, ex CTO, friki y padre de familia en Burjassot, Valencia."
+layout: "portfolio"
 aliases: ["/top/about/"]
 cover:
   image: "img/about.jpg"

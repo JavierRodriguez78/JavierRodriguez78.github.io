@@ -6,10 +6,10 @@
   <h1>Hola, soy Xavi 👋</h1>
   <p class="pf-role">{{ $d.role }} · {{ $d.location }}</p>
   <p>{{ $d.intro }}</p>
-  <p class="pf-cta">
-    <a class="pf-btn" href="mailto:email@javier-rodriguez.com">Email</a>
-    <a class="pf-btn" href="https://www.linkedin.com/in/javier-rodriguez-soler-ba466031/" target="_blank" rel="noopener">LinkedIn</a>
-    <a class="pf-btn" href="https://github.com/JavierRodriguez78" target="_blank" rel="noopener">GitHub</a>
+  <p class="pf-cta pf-links">
+    <a class="pf-icon" href="mailto:email@javier-rodriguez.com" title="Email" aria-label="Email">{{ partial "pf-icon.html" "mail" }}</a>
+    <a class="pf-icon" href="https://www.linkedin.com/in/javier-rodriguez-soler-ba466031/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">{{ partial "pf-icon.html" "linkedin" }}</a>
+    <a class="pf-icon" href="https://github.com/JavierRodriguez78" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">{{ partial "pf-icon.html" "github" }}</a>
   </p>
 </section>
 
@@ -17,7 +17,6 @@
   <a href="#experiencia">Experiencia</a>
   <a href="#proyectos">Proyectos</a>
   <a href="#sobre-mi">Sobre mí</a>
-  <a href="#blog">Blog</a>
 </nav>
 
 <section id="experiencia" class="pf-section">
@@ -70,16 +69,8 @@
 
 <section id="sobre-mi" class="pf-section">
   <h2>Sobre mí</h2>
-  {{- with site.GetPage "/about" }}{{ .Content }}{{ end }}
+  {{ .Content }}
   <h3>Formación y certificaciones</h3>
   <ul>{{ range $d.certs }}<li>{{ . }}</li>{{ end }}</ul>
-</section>
-
-<section id="blog" class="pf-section">
-  <h2>Últimos posts</h2>
-  {{- range first 5 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-  <article class="pf-post"><a href="{{ .RelPermalink }}">{{ .Title }}</a><time>{{ .Date | time.Format site.Params.DateFormat }}</time></article>
-  {{- end }}
-  <p><a href="/post/">Ver todos los posts →</a></p>
 </section>
 {{- end }}
