@@ -12,8 +12,8 @@ hasCJKLanguage = false
 
 # Google Analytics 4: crea una propiedad GA4 y pon aquí el ID (empieza por G-).
 # El antiguo UA-159378701-1 (Universal Analytics) dejó de funcionar en julio de 2023.
-# [services.googleAnalytics]
-#   id = "G-XXXXXXXXXX"
+[services.googleAnalytics]
+   id = "GTM-NDNBTDJ"
 
 ignoreLogs = ["warning-goldmark-raw-html"]
 
