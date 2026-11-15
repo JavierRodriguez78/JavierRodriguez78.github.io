@@ -10,7 +10,7 @@ cover:
   image: "img/xtaskjs/xtaskjs-logo.png"
   alt: "Logo de xTaskJS"
   relative: false
-draft: true
+draft: false
 ---
 En 2021 publiqué en este blog un [esqueleto de aplicación con TypeScript, Inversify y TypeORM]({{< ref "2021-12-11-Skeletor-typescript-DDD.md" >}}) y terminaba el artículo diciendo que me gustaría actualizarlo y hacerlo crecer.
 
