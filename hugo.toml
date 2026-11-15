@@ -98,6 +98,10 @@ ignoreLogs = ["warning-goldmark-raw-html"]
   hideSummary = false
   showtoc = true
 
+  # Enlaces del pie: política de cookies y reapertura del banner de consentimiento
+  [params.footer]
+    text = '<a href="/cookies/">Cookies</a> · <a href="#" data-cookie-settings>Configurar cookies</a>'
+
   [params.assets]
     disableHLJS = true
     favicon = "/img/me.jpg"

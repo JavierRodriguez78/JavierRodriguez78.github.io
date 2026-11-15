@@ -1,0 +1,20 @@
+{{- /* Sustituye al parcial interno de Hugo: Google Analytics 4 NO se carga hasta
+       que el visitante acepta las cookies (ver extend_footer.html). */ -}}
+{{- with site.Config.Services.GoogleAnalytics.ID }}
+<script>
+  window.GA_ID = {{ . }};
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.loadAnalytics = function () {
+    if (window.__gaLoaded) return;
+    window.__gaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID;
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', window.GA_ID, { anonymize_ip: true });
+  };
+  try { if (localStorage.getItem('cookie-consent') === 'accepted') window.loadAnalytics(); } catch (e) {}
+</script>
+{{- end }}

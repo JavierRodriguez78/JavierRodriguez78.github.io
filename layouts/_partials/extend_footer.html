@@ -1,0 +1,44 @@
+{{- /* Banner de consentimiento de cookies (RGPD / LSSI). */ -}}
+<style>
+  #cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:1000;display:none;background:var(--entry,var(--theme));color:var(--content);border-top:1px solid var(--border);box-shadow:0 -2px 12px rgba(0,0,0,.15);padding:14px 20px;font-size:.9rem}
+  #cookie-banner .cb-inner{max-width:var(--main-width,720px);margin:0 auto;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+  #cookie-banner p{margin:0;flex:1 1 280px}
+  #cookie-banner a{text-decoration:underline}
+  #cookie-banner .cb-actions{display:flex;gap:8px}
+  #cookie-banner button{cursor:pointer;font:inherit;padding:8px 16px;border-radius:6px;border:1px solid var(--primary);background:var(--theme);color:var(--primary)}
+  #cookie-banner button.cb-accept{background:var(--primary);color:var(--theme)}
+</style>
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+  <div class="cb-inner">
+    <p>Uso cookies de <strong>Google Analytics</strong> para conocer cómo se usa el blog. Solo se activan si las aceptas. Más información en la <a href="{{ "cookies/" | relLangURL }}">política de cookies</a>.</p>
+    <div class="cb-actions">
+      <button type="button" class="cb-reject" id="cookie-reject">Rechazar</button>
+      <button type="button" class="cb-accept" id="cookie-accept">Aceptar</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var KEY = 'cookie-consent', banner = document.getElementById('cookie-banner');
+  function get() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function set(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+  function show() { banner.style.display = 'block'; }
+  function hide() { banner.style.display = 'none'; }
+  if (!get()) show();
+  document.getElementById('cookie-accept').addEventListener('click', function () {
+    set('accepted'); hide(); if (window.loadAnalytics) window.loadAnalytics();
+  });
+  document.getElementById('cookie-reject').addEventListener('click', function () {
+    set('rejected'); hide();
+  });
+  // Permite cambiar la decisión desde el enlace "Configurar cookies"
+  window.openCookieSettings = function () {
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    show();
+  };
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest && e.target.closest('[data-cookie-settings]');
+    if (t) { e.preventDefault(); window.openCookieSettings(); }
+  });
+})();
+</script>
